@@ -1,0 +1,1632 @@
+  [1m[35m (277.6ms)[0m  [1m[35mCREATE DATABASE "frolf_player_api_development" ENCODING = 'unicode'[0m
+  [1m[35m (285.4ms)[0m  [1m[35mCREATE DATABASE "frolf_player_api_test" ENCODING = 'unicode'[0m
+  [1m[35m (4.5ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (2.5ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5250604569056036610)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreatePlayers (20190910151913)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (3.2ms)[0m  [1m[35mCREATE TABLE "players" ("id" bigserial primary key, "name" character varying, "pdga_number" integer, "criteria" character varying, "events" integer, "earnings" integer, "image" character varying)[0m
+  [1m[36mprimary::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190910151913"]]
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-09-10 15:24:29.246678"], ["updated_at", "2019-09-10 15:24:29.246678"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(5250604569056036610)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.9ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Paul McBeth"], ["pdga_number", 27523], ["criteria", "1 2 3 4 5"], ["events", 25], ["earnings", 57880], ["image", "https://www.pdga.com/files/styles/thumbnail/public/pictures/picture-10353-1448324685.jpg?itok=skNC-yw3"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.2ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Eagle Wynne McMahon"], ["pdga_number", 37817], ["criteria", "3 4 2005"], ["events", 23], ["earnings", 47119], ["image", "https://www.discgolfworldtour.com/wp-content/uploads/2017/07/DSC_3470.jpg"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.2ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Ricky Wysocki"], ["pdga_number", 38008], ["criteria", "1 3 4 5"], ["events", 26], ["earnings", 46414], ["image", "https://www.discgolfworldtour.com/wp-content/uploads/2016/03/LADiscGolf-03341.jpg"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.2ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Chris Dickerson"], ["pdga_number", 62467], ["criteria", "3 4 2005"], ["events", 48], ["earnings", 37968], ["image", "https://cdn.discgolf.ultiworld.com/wp-content/uploads/2018/09/43345177785_e36a904cde_k-1024x683.jpg"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.2ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Kevin Jones"], ["pdga_number", 41760], ["criteria", "3 4 2005"], ["events", 41], ["earnings", 36660], ["image", "https://images.squarespace-cdn.com/content/v1/58b5a6addb29d6036965863c/1543863967451-Z4CSEOTDWCDT48GOJLJU/ke17ZwdGBToddI8pDm48kA_SSaoz4elkj-HsZd8gX3Z7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z5QPOohDIaIeljMHgDF5CVlOqpeNLcJ80NK65_fV7S1UWPwZyNcweDIvdeL5kotwkIXjs9g0WibSO_cU-Ijy4Pwg6poS-6WGGnXqDacZer4yQ/Kevin_Jones_2018_11.jpg"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.2ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Paul Ulibarri"], ["pdga_number", 27171], ["criteria", "3 4 2005"], ["events", 38], ["earnings", 31396], ["image", "https://www.discgolfworldtour.com/wp-content/uploads/2016/03/LADiscGolf-02701.jpg"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.2ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "James Conrad"], ["pdga_number", 17295], ["criteria", "3 4 2005"], ["events", 26], ["earnings", 30173], ["image", "https://www.innovadiscs.com/wp-content/uploads/2017/06/james-conrad-1x1.jpg"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.2ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Greg Barsby"], ["pdga_number", 15857], ["criteria", "1 3 4 5"], ["events", 30], ["earnings", 29730], ["image", "https://www.innovadiscs.com/wp-content/uploads/2016/05/IMG_9876-1.jpg"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.3ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Paige Pierce"], ["pdga_number", 29190], ["criteria", "1 2 3 4 5"], ["events", 28], ["earnings", 29395], ["image", "https://www.discgolfworldtour.com/wp-content/uploads/2017/10/DGWTPaigePierceProfile484.jpg"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.3ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Nate Sexton"], ["pdga_number", 18824], ["criteria", "2 3 4 5"], ["events", 18], ["earnings", 26569], ["image", "https://cdn.shopify.com/s/files/1/0981/0008/collections/Artboard_3_fb8e4cd4-9b13-4524-8f83-4eb3630a20e8_1024x1024.png?v=1562600217"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.2ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Sarah Hokom"], ["pdga_number", 34563], ["criteria", "2 3 4 5"], ["events", 30], ["earnings", 24769], ["image", ""]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.2ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Catrina Allen"], ["pdga_number", 44184], ["criteria", "1 3 4 5"], ["events", 33], ["earnings", 24229], ["image", ""]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.2ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Garrett Gurthie"], ["pdga_number", 13864], ["criteria", "3 4 2005"], ["events", 33], ["earnings", 23610], ["image", ""]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.2ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Simon Lizotte"], ["pdga_number", 8332], ["criteria", "3 4 2005"], ["events", 20], ["earnings", 22339], ["image", ""]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.2ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Emerson Keith"], ["pdga_number", 47472], ["criteria", "3 4 2005"], ["events", 58], ["earnings", 21609], ["image", ""]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.2ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Drew Gibson"], ["pdga_number", 48346], ["criteria", "4 5"], ["events", 31], ["earnings", 21406], ["image", ""]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.2ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Nikko Locastro"], ["pdga_number", 11534], ["criteria", "3 4 2005"], ["events", 27], ["earnings", 20737], ["image", ""]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.2ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Zach Melton"], ["pdga_number", 38631], ["criteria", "3 4 2005"], ["events", 40], ["earnings", 19748], ["image", ""]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.2ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Cameron Colglazier"], ["pdga_number", 47407], ["criteria", "3 4 2005"], ["events", 24], ["earnings", 19484], ["image", ""]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.2ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Joel Freeman"], ["pdga_number", 69509], ["criteria", "3 4 2005"], ["events", 30], ["earnings", 18757], ["image", ""]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.2ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Matthew Orum"], ["pdga_number", 18330], ["criteria", "3 4 2005"], ["events", 20], ["earnings", 18588], ["image", ""]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.2ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Calvin Heimburg"], ["pdga_number", 45971], ["criteria", "3 4 2005"], ["events", 25], ["earnings", 17619], ["image", ""]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.2ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Philo Brathwaite"], ["pdga_number", 26416], ["criteria", "4 5"], ["events", 28], ["earnings", 17577], ["image", ""]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.2ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Jessica Weese"], ["pdga_number", 50656], ["criteria", "3 4 2005"], ["events", 35], ["earnings", 17530], ["image", ""]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.2ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Seppo Paju"], ["pdga_number", 36744], ["criteria", "4 5"], ["events", 20], ["earnings", 17217], ["image", ""]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.2ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Austin Hannum"], ["pdga_number", 68835], ["criteria", "4 5"], ["events", 39], ["earnings", 16979], ["image", ""]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.3ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Jeremy Koling"], ["pdga_number", 33705], ["criteria", "2 3 4 5"], ["events", 27], ["earnings", 16947], ["image", ""]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.2ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Joshua Anthon"], ["pdga_number", 17946], ["criteria", "3 4 2005"], ["events", 14], ["earnings", 16923], ["image", ""]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.2ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "JohnE McCray"], ["pdga_number", 9852], ["criteria", "1 2 4 5"], ["events", 24], ["earnings", 16454], ["image", ""]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.2ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Cale Leiviska"], ["pdga_number", 24341], ["criteria", "3 4 2005"], ["events", 24], ["earnings", 16421], ["image", ""]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.2ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Andrew Presnell"], ["pdga_number", 63765], ["criteria", "3 4 2005"], ["events", 37], ["earnings", 16327], ["image", ""]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.2ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Grady Shue"], ["pdga_number", 68285], ["criteria", "4 5"], ["events", 31], ["earnings", 16011], ["image", ""]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.2ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Lisa Fajkus"], ["pdga_number", 32654], ["criteria", "3 4 2005"], ["events", 32], ["earnings", 15782], ["image", ""]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.2ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Paige Bjerkaas"], ["pdga_number", 33833], ["criteria", "1 3 4 5"], ["events", 26], ["earnings", 15382], ["image", ""]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.2ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "A.J. Risley"], ["pdga_number", 25890], ["criteria", "4 5"], ["events", 34], ["earnings", 14084], ["image", ""]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.2ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Patrick Brown"], ["pdga_number", 25713], ["criteria", "1 2 4 5"], ["events", 22], ["earnings", 13964], ["image", ""]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.2ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "David Feldberg"], ["pdga_number", 12626], ["criteria", "1 4 2005"], ["events", 19], ["earnings", 13147], ["image", ""]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.2ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Reid Frescura"], ["pdga_number", 48338], ["criteria", "4 5"], ["events", 41], ["earnings", 12880], ["image", ""]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.2ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Matt Dollar"], ["pdga_number", 26045], ["criteria", "4 5"], ["events", 36], ["earnings", 12827], ["image", ""]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.2ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Nate Perkins"], ["pdga_number", 65737], ["criteria", "4 5"], ["events", 25], ["earnings", 12702], ["image", ""]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.2ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Shasta Criss"], ["pdga_number", 28597], ["criteria", "3 4 2005"], ["events", 26], ["earnings", 12640], ["image", ""]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.2ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Michael Johansen"], ["pdga_number", 20300], ["criteria", "4 5"], ["events", 25], ["earnings", 12535], ["image", ""]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.2ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Devan Owens"], ["pdga_number", 25168], ["criteria", "4 5"], ["events", 22], ["earnings", 12388], ["image", ""]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.2ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Tim Barham"], ["pdga_number", 53332], ["criteria", "3 4 2005"], ["events", 24], ["earnings", 12385], ["image", ""]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.2ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Scott Withers"], ["pdga_number", 38464], ["criteria", "4 5"], ["events", 27], ["earnings", 12163], ["image", ""]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.2ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Lewis Bitney"], ["pdga_number", 51242], ["criteria", "3 4 2005"], ["events", 37], ["earnings", 12148], ["image", ""]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.2ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Bobby Musick"], ["pdga_number", 15911], ["criteria", "4 5"], ["events", 27], ["earnings", 12077], ["image", ""]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.2ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Alex Russell"], ["pdga_number", 66362], ["criteria", "3 4 2005"], ["events", 30], ["earnings", 12013], ["image", ""]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.2ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Noah Meintsma"], ["pdga_number", 56555], ["criteria", "4 5"], ["events", 25], ["earnings", 11708], ["image", ""]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.2ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Barry Schultz"], ["pdga_number", 6840], ["criteria", "1 2 4 5"], ["events", 25], ["earnings", 11638], ["image", ""]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.2ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Matt Bell"], ["pdga_number", 48950], ["criteria", "4 5"], ["events", 34], ["earnings", 11599], ["image", ""]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.2ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Eric Oakley"], ["pdga_number", 53565], ["criteria", "4 5"], ["events", 28], ["earnings", 11583], ["image", ""]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.2ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Coda Hatfield"], ["pdga_number", 23651], ["criteria", "3 4 2005"], ["events", 33], ["earnings", 11529], ["image", ""]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.2ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Donald Ellsworth"], ["pdga_number", 17407], ["criteria", "4 5"], ["events", 39], ["earnings", 11517], ["image", ""]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.2ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Corey Ellis"], ["pdga_number", 44512], ["criteria", "4 5"], ["events", 39], ["earnings", 11377], ["image", ""]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.2ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Joe Rovere"], ["pdga_number", 30306], ["criteria", "3 4 2005"], ["events", 16], ["earnings", 11284], ["image", ""]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.2ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Andrew Marwede"], ["pdga_number", 75590], ["criteria", "3 4 2005"], ["events", 33], ["earnings", 11127], ["image", ""]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.2ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Madison Walker"], ["pdga_number", 59431], ["criteria", "3 4"], ["events", 28], ["earnings", 10784], ["image", ""]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.2ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Geoff Hungerford"], ["pdga_number", 688], ["criteria", "5"], ["events", 36], ["earnings", 10658], ["image", ""]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.2ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Zackeriath Johnson"], ["pdga_number", 50312], ["criteria", "4 5"], ["events", 37], ["earnings", 10501], ["image", ""]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.2ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Colten Montgomery"], ["pdga_number", 35876], ["criteria", "4 5"], ["events", 28], ["earnings", 10468], ["image", ""]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.2ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Andrew Fish"], ["pdga_number", 58320], ["criteria", "3 4 2005"], ["events", 18], ["earnings", 9982], ["image", ""]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.2ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Brad Schick"], ["pdga_number", 7992], ["criteria", "3 4 2005"], ["events", 28], ["earnings", 9869], ["image", ""]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.2ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Charlie Goodpasture"], ["pdga_number", 26455], ["criteria", "4 5"], ["events", 29], ["earnings", 9831], ["image", ""]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.2ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Bradley Williams"], ["pdga_number", 31644], ["criteria", "4 5"], ["events", 19], ["earnings", 9824], ["image", ""]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.2ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Adam Hammes"], ["pdga_number", 57365], ["criteria", "3 4 2005"], ["events", 20], ["earnings", 9597], ["image", ""]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.2ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Sam Lee"], ["pdga_number", 78519], ["criteria", "3 4 2005"], ["events", 46], ["earnings", 9374], ["image", ""]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.2ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Dustin Keegan"], ["pdga_number", 35187], ["criteria", "4 5"], ["events", 21], ["earnings", 9370], ["image", ""]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.2ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Chris Clemons"], ["pdga_number", 50401], ["criteria", "4 5"], ["events", 25], ["earnings", 9365], ["image", ""]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.3ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Robert R. Bainbridge"], ["pdga_number", 22110], ["criteria", "4 5"], ["events", 20], ["earnings", 9347], ["image", ""]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.2ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Dan Hastings"], ["pdga_number", 33504], ["criteria", "3 4 2005"], ["events", 24], ["earnings", 9337], ["image", ""]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.2ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Ellen Widboom"], ["pdga_number", 58276], ["criteria", "3 5 2019"], ["events", 37], ["earnings", 9065], ["image", ""]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.2ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Mike Moser"], ["pdga_number", 5557], ["criteria", "4 5"], ["events", 30], ["earnings", 8917], ["image", ""]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.2ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Cameron Messerschmidt"], ["pdga_number", 58814], ["criteria", "5"], ["events", 38], ["earnings", 8802], ["image", ""]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.2ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Ziggy Bierekoven"], ["pdga_number", 29879], ["criteria", "4 5"], ["events", 32], ["earnings", 8755], ["image", ""]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.2ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Jesse Bickley"], ["pdga_number", 68357], ["criteria", "3 4 2005"], ["events", 28], ["earnings", 8609], ["image", ""]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.2ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Willie Prince"], ["pdga_number", 31550], ["criteria", "4 5"], ["events", 35], ["earnings", 8577], ["image", ""]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.2ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Elaine King"], ["pdga_number", 3090], ["criteria", "1 2 3 4 5"], ["events", 28], ["earnings", 8459], ["image", ""]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.2ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Joey Lutz"], ["pdga_number", 45887], ["criteria", "4 5"], ["events", 28], ["earnings", 8376], ["image", ""]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.2ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Eric Rainey"], ["pdga_number", 41947], ["criteria", "2 5"], ["events", 25], ["earnings", 8351], ["image", ""]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.2ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Bo Tillman"], ["pdga_number", 46480], ["criteria", "4 5"], ["events", 20], ["earnings", 8315], ["image", ""]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.2ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Steve Boylan"], ["pdga_number", 6542], ["criteria", "5"], ["events", 56], ["earnings", 8301], ["image", ""]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.2ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Jordan Castro"], ["pdga_number", 49431], ["criteria", "4 5"], ["events", 27], ["earnings", 8249], ["image", ""]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.2ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Chandler Fry"], ["pdga_number", 25541], ["criteria", "3 4 2005"], ["events", 15], ["earnings", 8205], ["image", ""]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.2ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Steve Brinster"], ["pdga_number", 10628], ["criteria", "4 5"], ["events", 15], ["earnings", 7927], ["image", ""]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.2ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Martin Hendel"], ["pdga_number", 39469], ["criteria", "4 5"], ["events", 20], ["earnings", 7917], ["image", ""]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.2ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "James Proctor"], ["pdga_number", 34250], ["criteria", "3 4 2005"], ["events", 15], ["earnings", 7883], ["image", ""]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.2ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Rebecca Cox"], ["pdga_number", 32917], ["criteria", "3 4 2005"], ["events", 23], ["earnings", 7850], ["image", ""]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.2ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Sias Elmore"], ["pdga_number", 57425], ["criteria", "4 5"], ["events", 31], ["earnings", 7775], ["image", ""]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.2ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Väinö Mäkelä"], ["pdga_number", 59635], ["criteria", "3 4 2005"], ["events", 14], ["earnings", 7571], ["image", ""]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.5ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Will Schusterick"], ["pdga_number", 29064], ["criteria", "2 4 2005"], ["events", 23], ["earnings", 7531], ["image", ""]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.2ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Bartosz Kowalewski"], ["pdga_number", 68737], ["criteria", "4 5"], ["events", 29], ["earnings", 7508], ["image", ""]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.3ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Jennifer Allen"], ["pdga_number", 15354], ["criteria", "3 4 2005"], ["events", 21], ["earnings", 7382], ["image", ""]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.2ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Eveliina Salonen"], ["pdga_number", 64927], ["criteria", "3 4 2005"], ["events", 14], ["earnings", 7322], ["image", ""]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.2ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Anthony Barela"], ["pdga_number", 44382], ["criteria", "4 5"], ["events", 17], ["earnings", 7309], ["image", ""]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.2ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Nathan Queen"], ["pdga_number", 68286], ["criteria", "3 4 2005"], ["events", 35], ["earnings", 7297], ["image", ""]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.2ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Nick Wood"], ["pdga_number", 51161], ["criteria", "3 4 2005"], ["events", 23], ["earnings", 7247], ["image", ""]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.2ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Brian Schweberger"], ["pdga_number", 12989], ["criteria", "4 5"], ["events", 26], ["earnings", 7223], ["image", ""]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.2ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Edward Ward"], ["pdga_number", 62387], ["criteria", "5"], ["events", 34], ["earnings", 7189], ["image", ""]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.2ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Kristin Tattar"], ["pdga_number", 73986], ["criteria", "3 4"], ["events", 21], ["earnings", 7184], ["image", ""]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.2ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Brian Earhart"], ["pdga_number", 45879], ["criteria", "4 5"], ["events", 21], ["earnings", 7099], ["image", ""]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.2ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Jacob Henson"], ["pdga_number", 60440], ["criteria", "3 5"], ["events", 27], ["earnings", 7034], ["image", ""]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.2ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Peter McBride"], ["pdga_number", 34463], ["criteria", "4 5"], ["events", 22], ["earnings", 7026], ["image", ""]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.2ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Brandon Brown"], ["pdga_number", 87673], ["criteria", "5"], ["events", 35], ["earnings", 7016], ["image", ""]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.2ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Austin Turner"], ["pdga_number", 54049], ["criteria", "4 5"], ["events", 25], ["earnings", 6879], ["image", ""]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.2ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Paul Oman"], ["pdga_number", 34344], ["criteria", "4 5"], ["events", 21], ["earnings", 6862], ["image", ""]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.2ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Ron Convers Jr"], ["pdga_number", 9648], ["criteria", "1 2 4 5"], ["events", 14], ["earnings", 6848], ["image", ""]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.2ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "George Smith"], ["pdga_number", 4034], ["criteria", "5"], ["events", 21], ["earnings", 6798], ["image", ""]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.2ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Holly Finley"], ["pdga_number", 51277], ["criteria", "3 4"], ["events", 20], ["earnings", 6780], ["image", ""]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.2ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Cody Bradshaw"], ["pdga_number", 58007], ["criteria", "4 5"], ["events", 37], ["earnings", 6700], ["image", ""]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.2ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Robert Ryan"], ["pdga_number", 30296], ["criteria", "5"], ["events", 21], ["earnings", 6614], ["image", ""]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.2ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Dutch Napier"], ["pdga_number", 31473], ["criteria", "4 5"], ["events", 21], ["earnings", 6597], ["image", ""]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.2ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Landon Knight"], ["pdga_number", 47662], ["criteria", "5"], ["events", 30], ["earnings", 6583], ["image", ""]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.2ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Logan Bowers"], ["pdga_number", 31536], ["criteria", "5"], ["events", 26], ["earnings", 6555], ["image", ""]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.3ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Vinnie Miller"], ["pdga_number", 5521], ["criteria", "5"], ["events", 23], ["earnings", 6525], ["image", ""]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.2ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Tyler Horne"], ["pdga_number", 16058], ["criteria", "4 5"], ["events", 21], ["earnings", 6409], ["image", ""]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.2ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Kyle Webster"], ["pdga_number", 28977], ["criteria", "3 4 2005"], ["events", 30], ["earnings", 6189], ["image", ""]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.2ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Ray Johnson"], ["pdga_number", 10355], ["criteria", "4 5"], ["events", 13], ["earnings", 6146], ["image", ""]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.2ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Larry Gardner"], ["pdga_number", 22706], ["criteria", "5"], ["events", 42], ["earnings", 6067], ["image", ""]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.2ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Ming Vang"], ["pdga_number", 40532], ["criteria", "5"], ["events", 19], ["earnings", 6006], ["image", ""]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.3ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Karl Johan Nybo"], ["pdga_number", 28903], ["criteria", "4 5"], ["events", 11], ["earnings", 6005], ["image", ""]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.2ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Das Loomis"], ["pdga_number", 35956], ["criteria", "5"], ["events", 20], ["earnings", 5925], ["image", ""]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.2ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Nicholas Masters"], ["pdga_number", 61176], ["criteria", "5"], ["events", 31], ["earnings", 5849], ["image", ""]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.2ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Thomas Gilbert"], ["pdga_number", 85850], ["criteria", "3 5"], ["events", 34], ["earnings", 5797], ["image", ""]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.2ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Teemu Nissinen"], ["pdga_number", 39696], ["criteria", "4 5"], ["events", 13], ["earnings", 5749], ["image", ""]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.2ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Ben Kroll"], ["pdga_number", 42963], ["criteria", "5"], ["events", 24], ["earnings", 5738], ["image", ""]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.2ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Alan Wagner"], ["pdga_number", 28550], ["criteria", "5"], ["events", 40], ["earnings", 5722], ["image", ""]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.2ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Daniel Polk"], ["pdga_number", 27276], ["criteria", "5"], ["events", 31], ["earnings", 5627], ["image", ""]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.2ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Silver Lätt"], ["pdga_number", 61186], ["criteria", "4 5"], ["events", 19], ["earnings", 5606], ["image", ""]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.2ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Roger Reyes"], ["pdga_number", 14240], ["criteria", "5"], ["events", 19], ["earnings", 5565], ["image", ""]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.2ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Kyle Williams"], ["pdga_number", 40128], ["criteria", "4 5"], ["events", 19], ["earnings", 5552], ["image", ""]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.2ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Jim Oates"], ["pdga_number", 3351], ["criteria", "1 5"], ["events", 10], ["earnings", 5540], ["image", ""]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.2ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Ville Piippo"], ["pdga_number", 27555], ["criteria", "5"], ["events", 32], ["earnings", 5468], ["image", ""]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.2ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Thomas Tomaselli"], ["pdga_number", 80904], ["criteria", "3 4 2005"], ["events", 21], ["earnings", 5439], ["image", ""]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.2ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Jeff Renner"], ["pdga_number", 67313], ["criteria", "5"], ["events", 26], ["earnings", 5399], ["image", ""]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.2ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Justin Cournoyer"], ["pdga_number", 37106], ["criteria", "5"], ["events", 27], ["earnings", 5360], ["image", ""]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.3ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Colin Forehand"], ["pdga_number", 53658], ["criteria", "4 5"], ["events", 22], ["earnings", 5292], ["image", ""]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.2ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Trevor Harbolt"], ["pdga_number", 26860], ["criteria", "5"], ["events", 31], ["earnings", 5272], ["image", ""]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.2ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Cole Wehrheim"], ["pdga_number", 60399], ["criteria", "3 4 2005"], ["events", 22], ["earnings", 5264], ["image", ""]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.2ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Steven Rico"], ["pdga_number", 4666], ["criteria", "4 5"], ["events", 17], ["earnings", 5248], ["image", ""]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.2ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Leo Piironen"], ["pdga_number", 36099], ["criteria", "3 5"], ["events", 13], ["earnings", 5232], ["image", ""]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.2ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Henna Blomroos"], ["pdga_number", 59227], ["criteria", "3 4 2005"], ["events", 11], ["earnings", 5206], ["image", ""]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.2ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Nicholas Rowton"], ["pdga_number", 34180], ["criteria", "4 5"], ["events", 25], ["earnings", 5200], ["image", ""]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.2ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Kyle Crabtree"], ["pdga_number", 25596], ["criteria", "4 5"], ["events", 15], ["earnings", 5196], ["image", ""]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.2ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "AJ Carey"], ["pdga_number", 61770], ["criteria", "5"], ["events", 35], ["earnings", 5185], ["image", ""]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.2ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Justin Bilodeau"], ["pdga_number", 45478], ["criteria", "5"], ["events", 17], ["earnings", 5158], ["image", ""]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.2ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Kevin Couch"], ["pdga_number", 7714], ["criteria", "5"], ["events", 16], ["earnings", 5139], ["image", ""]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.2ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Matthew Kern"], ["pdga_number", 41598], ["criteria", "5"], ["events", 31], ["earnings", 5136], ["image", ""]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.2ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Tanner Girouard"], ["pdga_number", 88077], ["criteria", "5"], ["events", 39], ["earnings", 5100], ["image", ""]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.2ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Miles Seaborn"], ["pdga_number", 29264], ["criteria", "4 5"], ["events", 12], ["earnings", 5097], ["image", ""]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.2ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Terry Rothlisberger"], ["pdga_number", 57493], ["criteria", "3 4 2005"], ["events", 15], ["earnings", 5025], ["image", ""]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.2ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Jacob Sanders"], ["pdga_number", 78848], ["criteria", "4"], ["events", 19], ["earnings", 4934], ["image", ""]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.2ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Christian Dietrich"], ["pdga_number", 27984], ["criteria", "4"], ["events", 8], ["earnings", 4815], ["image", ""]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.2ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Josh Childs"], ["pdga_number", 13007], ["criteria", "4"], ["events", 22], ["earnings", 4739], ["image", ""]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.2ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Nick Newton"], ["pdga_number", 47689], ["criteria", "4"], ["events", 24], ["earnings", 4616], ["image", ""]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.2ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Lance Brown"], ["pdga_number", 58644], ["criteria", "3"], ["events", 34], ["earnings", 4551], ["image", ""]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.2ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Mikael Räsänen"], ["pdga_number", 73312], ["criteria", "3 4"], ["events", 12], ["earnings", 4545], ["image", ""]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.3ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Kenny Lee"], ["pdga_number", 14204], ["criteria", "1"], ["events", 9], ["earnings", 4528], ["image", ""]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.3ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Chris Villa"], ["pdga_number", 58197], ["criteria", "4"], ["events", 25], ["earnings", 4525], ["image", ""]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.2ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Jeremiah Kraus"], ["pdga_number", 38737], ["criteria", "4"], ["events", 14], ["earnings", 4493], ["image", ""]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.3ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Nate Metzler"], ["pdga_number", 41220], ["criteria", "3"], ["events", 25], ["earnings", 4444], ["image", ""]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.2ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Robert McCall"], ["pdga_number", 42261], ["criteria", "4"], ["events", 16], ["earnings", 4394], ["image", ""]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.2ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Kenneth C. Tyburski"], ["pdga_number", 45935], ["criteria", "4"], ["events", 18], ["earnings", 4379], ["image", ""]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.2ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "CJ King"], ["pdga_number", 37832], ["criteria", "3"], ["events", 22], ["earnings", 4369], ["image", ""]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.2ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "James Cole"], ["pdga_number", 29690], ["criteria", "4"], ["events", 11], ["earnings", 4286], ["image", ""]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.2ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Russell Jessop"], ["pdga_number", 45782], ["criteria", "3"], ["events", 19], ["earnings", 4282], ["image", ""]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.2ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Kenny Clark"], ["pdga_number", 39829], ["criteria", "4"], ["events", 11], ["earnings", 4255], ["image", ""]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.2ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Cooper Legee"], ["pdga_number", 61055], ["criteria", "3"], ["events", 11], ["earnings", 4239], ["image", ""]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.2ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Kona Star Panis"], ["pdga_number", 27832], ["criteria", "3 5"], ["events", 25], ["earnings", 4201], ["image", ""]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.2ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Nicole Bradley"], ["pdga_number", 51229], ["criteria", "3 4 2005"], ["events", 15], ["earnings", 4175], ["image", ""]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.2ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Tyler Grady"], ["pdga_number", 45097], ["criteria", "4"], ["events", 18], ["earnings", 4150], ["image", ""]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.2ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Jake Lauber"], ["pdga_number", 44782], ["criteria", "4"], ["events", 17], ["earnings", 4081], ["image", ""]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.2ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Jeff Faes"], ["pdga_number", 33661], ["criteria", "4"], ["events", 17], ["earnings", 3990], ["image", ""]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.2ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Daniel Brooks-Wells"], ["pdga_number", 79228], ["criteria", "4"], ["events", 25], ["earnings", 3965], ["image", ""]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.2ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Collin Bailey"], ["pdga_number", 52115], ["criteria", "4"], ["events", 16], ["earnings", 3850], ["image", ""]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.2ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Zoe Andyke"], ["pdga_number", 39504], ["criteria", "4 5 2019"], ["events", 16], ["earnings", 3817], ["image", ""]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.2ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Matthew Blakely"], ["pdga_number", 15410], ["criteria", "4"], ["events", 20], ["earnings", 3810], ["image", ""]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.2ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Michael Cloyes"], ["pdga_number", 3306], ["criteria", "2"], ["events", 12], ["earnings", 3797], ["image", ""]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.3ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Craig Cutler"], ["pdga_number", 20671], ["criteria", "4"], ["events", 12], ["earnings", 3796], ["image", ""]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.2ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Max Nichols"], ["pdga_number", 21870], ["criteria", "4"], ["events", 15], ["earnings", 3777], ["image", ""]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.2ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Mikael Häme"], ["pdga_number", 64889], ["criteria", "4"], ["events", 10], ["earnings", 3775], ["image", ""]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.2ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Timothy Escobedo Jr"], ["pdga_number", 22698], ["criteria", "4"], ["events", 18], ["earnings", 3720], ["image", ""]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.2ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Juho Parviainen"], ["pdga_number", 30858], ["criteria", "4"], ["events", 15], ["earnings", 3680], ["image", ""]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.2ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Joshua Patin"], ["pdga_number", 56037], ["criteria", "4"], ["events", 16], ["earnings", 3657], ["image", ""]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.2ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Janne Hirsimäki"], ["pdga_number", 47516], ["criteria", "4"], ["events", 11], ["earnings", 3656], ["image", ""]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.2ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Jason Herm"], ["pdga_number", 15899], ["criteria", "4"], ["events", 12], ["earnings", 3643], ["image", ""]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.2ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Haley Childs"], ["pdga_number", 69197], ["criteria", "5"], ["events", 16], ["earnings", 3617], ["image", ""]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.2ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Eric McCabe"], ["pdga_number", 11674], ["criteria", "4"], ["events", 9], ["earnings", 3588], ["image", ""]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.2ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Jeremy Herr"], ["pdga_number", 56486], ["criteria", "4"], ["events", 12], ["earnings", 3585], ["image", ""]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.2ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Sam Shiley"], ["pdga_number", 56072], ["criteria", "4"], ["events", 28], ["earnings", 3544], ["image", ""]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.2ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Benjamin Callaway"], ["pdga_number", 39015], ["criteria", "4"], ["events", 9], ["earnings", 3522], ["image", ""]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.2ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Benjamin Wiggins"], ["pdga_number", 38040], ["criteria", "4"], ["events", 14], ["earnings", 3504], ["image", ""]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.2ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Avery Jenkins"], ["pdga_number", 7495], ["criteria", "4"], ["events", 10], ["earnings", 3501], ["image", ""]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.2ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Ville Ahokas"], ["pdga_number", 53538], ["criteria", "3"], ["events", 15], ["earnings", 3460], ["image", ""]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.2ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Dylan Rees"], ["pdga_number", 60300], ["criteria", "4"], ["events", 19], ["earnings", 3384], ["image", ""]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.2ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Barrett White"], ["pdga_number", 16737], ["criteria", "2 5"], ["events", 17], ["earnings", 3327], ["image", ""]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.2ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Alan Beaver"], ["pdga_number", 1213], ["criteria", "2"], ["events", 24], ["earnings", 3301], ["image", ""]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.2ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Linus Carlsson"], ["pdga_number", 82098], ["criteria", "4"], ["events", 18], ["earnings", 3248], ["image", ""]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.2ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Matt Hammersten"], ["pdga_number", 81781], ["criteria", "4"], ["events", 21], ["earnings", 3239], ["image", ""]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.2ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Robert Lockwood"], ["pdga_number", 42236], ["criteria", "4"], ["events", 20], ["earnings", 3160], ["image", ""]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.3ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Anders Swärd"], ["pdga_number", 5310], ["criteria", "3"], ["events", 14], ["earnings", 3072], ["image", ""]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.2ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Luis Nava"], ["pdga_number", 50383], ["criteria", "4"], ["events", 22], ["earnings", 3064], ["image", ""]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.2ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Vanessa Van Dyken"], ["pdga_number", 62325], ["criteria", "4 5 2019"], ["events", 12], ["earnings", 3016], ["image", ""]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.2ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Kristy Moore"], ["pdga_number", 56553], ["criteria", "3 5"], ["events", 17], ["earnings", 2806], ["image", ""]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.2ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Valarie Jenkins"], ["pdga_number", 17495], ["criteria", "1 4 2005"], ["events", 8], ["earnings", 2795], ["image", ""]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.2ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Kristine King"], ["pdga_number", 27725], ["criteria", "4 5"], ["events", 12], ["earnings", 2728], ["image", ""]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.2ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Hailey King"], ["pdga_number", 81351], ["criteria", "4 5"], ["events", 12], ["earnings", 2598], ["image", ""]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.2ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Lauren Butler"], ["pdga_number", 65489], ["criteria", "3 5"], ["events", 27], ["earnings", 2553], ["image", ""]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.2ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Alisha Grace-Schafer"], ["pdga_number", 69838], ["criteria", "3"], ["events", 16], ["earnings", 2491], ["image", ""]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.2ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Amanda Zaccone"], ["pdga_number", 59547], ["criteria", "3"], ["events", 19], ["earnings", 2287], ["image", ""]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.2ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Sandy Gast"], ["pdga_number", 6440], ["criteria", "1 2"], ["events", 16], ["earnings", 2237], ["image", ""]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.3ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Sai Ananda"], ["pdga_number", 58303], ["criteria", "3"], ["events", 14], ["earnings", 2143], ["image", ""]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.2ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Liz Carr-Sypien"], ["pdga_number", 31068], ["criteria", "3"], ["events", 14], ["earnings", 2033], ["image", ""]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.2ms)[0m  [1m[32mINSERT INTO "players" ("name", "pdga_number", "criteria", "events", "earnings", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Courtney Cannon"], ["pdga_number", 70634], ["criteria", "3"], ["events", 23], ["earnings", 2026], ["image", ""]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/players" for ::1 at 2019-09-10 11:26:33 -0400
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PlayersController#index as HTML
+  [1m[36mPlayer Load (0.5ms)[0m  [1m[34mSELECT "players".* FROM "players"[0m
+  ↳ app/controllers/players_controller.rb:8:in `index'
+Completed 200 OK in 24ms (Views: 18.3ms | ActiveRecord: 4.2ms | Allocations: 29632)
+
+
+Started GET "/players/1" for ::1 at 2019-09-10 11:28:06 -0400
+Processing by PlayersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPlayer Load (0.3ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/players_controller.rb:44:in `set_player'
+Completed 200 OK in 12ms (Views: 0.2ms | ActiveRecord: 0.5ms | Allocations: 2786)
+
+
+Started GET "/players" for ::1 at 2019-09-10 11:48:39 -0400
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PlayersController#index as HTML
+  [1m[36mPlayer Load (0.7ms)[0m  [1m[34mSELECT "players".* FROM "players"[0m
+  ↳ app/controllers/players_controller.rb:8:in `index'
+Completed 200 OK in 24ms (Views: 18.2ms | ActiveRecord: 3.9ms | Allocations: 29632)
+
+
+Started GET "/players" for ::1 at 2019-09-10 11:50:37 -0400
+Processing by PlayersController#index as HTML
+  [1m[36mPlayer Load (0.4ms)[0m  [1m[34mSELECT "players".* FROM "players"[0m
+  ↳ app/controllers/players_controller.rb:8:in `index'
+Completed 200 OK in 39ms (Views: 38.1ms | ActiveRecord: 0.4ms | Allocations: 24580)
+
+
+Started GET "/players" for ::1 at 2019-09-10 11:54:33 -0400
+Processing by PlayersController#index as HTML
+  [1m[36mPlayer Load (0.5ms)[0m  [1m[34mSELECT "players".* FROM "players"[0m
+  ↳ app/controllers/players_controller.rb:8:in `index'
+Completed 200 OK in 21ms (Views: 20.1ms | ActiveRecord: 0.5ms | Allocations: 24577)
+
+
+Started GET "/players" for ::1 at 2019-09-10 14:14:27 -0400
+Processing by PlayersController#index as HTML
+  [1m[36mPlayer Load (1.0ms)[0m  [1m[34mSELECT "players".* FROM "players"[0m
+  ↳ app/controllers/players_controller.rb:8:in `index'
+Completed 200 OK in 16ms (Views: 14.9ms | ActiveRecord: 1.0ms | Allocations: 24629)
+
+
+Started GET "/players" for ::1 at 2019-09-10 14:14:29 -0400
+Processing by PlayersController#index as HTML
+  [1m[36mPlayer Load (0.4ms)[0m  [1m[34mSELECT "players".* FROM "players"[0m
+  ↳ app/controllers/players_controller.rb:8:in `index'
+Completed 200 OK in 24ms (Views: 23.9ms | ActiveRecord: 0.4ms | Allocations: 24580)
+
+
+Started GET "/players" for ::1 at 2019-09-10 14:14:33 -0400
+Processing by PlayersController#index as HTML
+  [1m[36mPlayer Load (0.4ms)[0m  [1m[34mSELECT "players".* FROM "players"[0m
+  ↳ app/controllers/players_controller.rb:8:in `index'
+Completed 200 OK in 18ms (Views: 17.3ms | ActiveRecord: 0.4ms | Allocations: 24560)
+
+
+Started GET "/players" for ::1 at 2019-09-10 14:14:47 -0400
+Processing by PlayersController#index as HTML
+  [1m[36mPlayer Load (0.5ms)[0m  [1m[34mSELECT "players".* FROM "players"[0m
+  ↳ app/controllers/players_controller.rb:8:in `index'
+Completed 200 OK in 27ms (Views: 25.8ms | ActiveRecord: 0.5ms | Allocations: 24563)
+
+
+Started GET "/players" for ::1 at 2019-09-10 14:14:50 -0400
+Processing by PlayersController#index as HTML
+  [1m[36mPlayer Load (0.6ms)[0m  [1m[34mSELECT "players".* FROM "players"[0m
+  ↳ app/controllers/players_controller.rb:8:in `index'
+Completed 200 OK in 39ms (Views: 38.5ms | ActiveRecord: 0.6ms | Allocations: 24560)
+
+
+Started GET "/players" for ::1 at 2019-09-10 14:14:51 -0400
+Processing by PlayersController#index as HTML
+  [1m[36mPlayer Load (0.5ms)[0m  [1m[34mSELECT "players".* FROM "players"[0m
+  ↳ app/controllers/players_controller.rb:8:in `index'
+Completed 200 OK in 52ms (Views: 51.3ms | ActiveRecord: 0.5ms | Allocations: 24563)
+
+
+Started GET "/players" for ::1 at 2019-09-10 14:14:52 -0400
+Processing by PlayersController#index as HTML
+  [1m[36mPlayer Load (0.4ms)[0m  [1m[34mSELECT "players".* FROM "players"[0m
+  ↳ app/controllers/players_controller.rb:8:in `index'
+Completed 200 OK in 19ms (Views: 17.9ms | ActiveRecord: 0.4ms | Allocations: 24560)
+
+
+Started GET "/players" for ::1 at 2019-09-10 14:15:49 -0400
+Processing by PlayersController#index as HTML
+  [1m[36mPlayer Load (0.4ms)[0m  [1m[34mSELECT "players".* FROM "players"[0m
+  ↳ app/controllers/players_controller.rb:8:in `index'
+Completed 200 OK in 18ms (Views: 17.7ms | ActiveRecord: 0.4ms | Allocations: 24563)
+
+
+Started GET "/players" for ::1 at 2019-09-10 14:16:02 -0400
+Processing by PlayersController#index as HTML
+  [1m[36mPlayer Load (0.4ms)[0m  [1m[34mSELECT "players".* FROM "players"[0m
+  ↳ app/controllers/players_controller.rb:8:in `index'
+Completed 200 OK in 20ms (Views: 19.5ms | ActiveRecord: 0.4ms | Allocations: 24560)
+
+
+Started GET "/players" for ::1 at 2019-09-10 14:16:09 -0400
+Processing by PlayersController#index as HTML
+  [1m[36mPlayer Load (0.5ms)[0m  [1m[34mSELECT "players".* FROM "players"[0m
+  ↳ app/controllers/players_controller.rb:8:in `index'
+Completed 200 OK in 18ms (Views: 17.0ms | ActiveRecord: 0.5ms | Allocations: 24560)
+
+
+Started GET "/players" for ::1 at 2019-09-10 14:16:49 -0400
+Processing by PlayersController#index as HTML
+  [1m[36mPlayer Load (0.5ms)[0m  [1m[34mSELECT "players".* FROM "players"[0m
+  ↳ app/controllers/players_controller.rb:8:in `index'
+Completed 200 OK in 23ms (Views: 21.9ms | ActiveRecord: 0.5ms | Allocations: 24560)
+
+
+Started GET "/players" for ::1 at 2019-09-10 14:16:54 -0400
+Processing by PlayersController#index as HTML
+  [1m[36mPlayer Load (0.4ms)[0m  [1m[34mSELECT "players".* FROM "players"[0m
+  ↳ app/controllers/players_controller.rb:8:in `index'
+Completed 200 OK in 24ms (Views: 23.3ms | ActiveRecord: 0.4ms | Allocations: 24560)
+
+
+Started GET "/players" for ::1 at 2019-09-10 14:17:08 -0400
+Processing by PlayersController#index as HTML
+  [1m[36mPlayer Load (0.6ms)[0m  [1m[34mSELECT "players".* FROM "players"[0m
+  ↳ app/controllers/players_controller.rb:8:in `index'
+Completed 200 OK in 32ms (Views: 31.2ms | ActiveRecord: 0.6ms | Allocations: 24563)
+
+
+Started GET "/players" for ::1 at 2019-09-10 14:17:35 -0400
+Processing by PlayersController#index as HTML
+  [1m[36mPlayer Load (0.4ms)[0m  [1m[34mSELECT "players".* FROM "players"[0m
+  ↳ app/controllers/players_controller.rb:8:in `index'
+Completed 200 OK in 15ms (Views: 14.0ms | ActiveRecord: 0.4ms | Allocations: 24560)
+
+
+Started GET "/players" for ::1 at 2019-09-10 14:17:41 -0400
+Processing by PlayersController#index as HTML
+  [1m[36mPlayer Load (0.5ms)[0m  [1m[34mSELECT "players".* FROM "players"[0m
+  ↳ app/controllers/players_controller.rb:8:in `index'
+Completed 200 OK in 18ms (Views: 17.8ms | ActiveRecord: 0.5ms | Allocations: 24560)
+
+
+Started GET "/players" for ::1 at 2019-09-10 14:18:32 -0400
+Processing by PlayersController#index as HTML
+  [1m[36mPlayer Load (0.7ms)[0m  [1m[34mSELECT "players".* FROM "players"[0m
+  ↳ app/controllers/players_controller.rb:8:in `index'
+Completed 200 OK in 21ms (Views: 20.2ms | ActiveRecord: 0.7ms | Allocations: 24560)
+
+
+Started GET "/players" for ::1 at 2019-09-10 14:18:34 -0400
+Processing by PlayersController#index as HTML
+  [1m[36mPlayer Load (0.6ms)[0m  [1m[34mSELECT "players".* FROM "players"[0m
+  ↳ app/controllers/players_controller.rb:8:in `index'
+Completed 200 OK in 18ms (Views: 17.2ms | ActiveRecord: 0.6ms | Allocations: 24560)
+
+
+Started GET "/players" for ::1 at 2019-09-10 14:18:35 -0400
+Processing by PlayersController#index as HTML
+  [1m[36mPlayer Load (0.5ms)[0m  [1m[34mSELECT "players".* FROM "players"[0m
+  ↳ app/controllers/players_controller.rb:8:in `index'
+Completed 200 OK in 30ms (Views: 29.4ms | ActiveRecord: 0.5ms | Allocations: 24563)
+
+
+Started GET "/players" for ::1 at 2019-09-10 14:18:48 -0400
+Processing by PlayersController#index as HTML
+  [1m[36mPlayer Load (0.4ms)[0m  [1m[34mSELECT "players".* FROM "players"[0m
+  ↳ app/controllers/players_controller.rb:8:in `index'
+Completed 200 OK in 15ms (Views: 14.2ms | ActiveRecord: 0.4ms | Allocations: 24560)
+
+
+Started GET "/players" for ::1 at 2019-09-10 14:19:32 -0400
+Processing by PlayersController#index as HTML
+  [1m[36mPlayer Load (0.4ms)[0m  [1m[34mSELECT "players".* FROM "players"[0m
+  ↳ app/controllers/players_controller.rb:8:in `index'
+Completed 200 OK in 19ms (Views: 18.5ms | ActiveRecord: 0.4ms | Allocations: 24560)
+
+
+Started GET "/players" for ::1 at 2019-09-10 14:21:17 -0400
+Processing by PlayersController#index as HTML
+  [1m[36mPlayer Load (0.4ms)[0m  [1m[34mSELECT "players".* FROM "players"[0m
+  ↳ app/controllers/players_controller.rb:8:in `index'
+Completed 200 OK in 14ms (Views: 13.4ms | ActiveRecord: 0.4ms | Allocations: 24560)
+
+
+Started GET "/players" for ::1 at 2019-09-10 14:21:27 -0400
+Processing by PlayersController#index as HTML
+  [1m[36mPlayer Load (0.7ms)[0m  [1m[34mSELECT "players".* FROM "players"[0m
+  ↳ app/controllers/players_controller.rb:8:in `index'
+Completed 200 OK in 24ms (Views: 23.3ms | ActiveRecord: 0.7ms | Allocations: 24563)
+
+
+Started GET "/players" for ::1 at 2019-09-10 14:21:58 -0400
+Processing by PlayersController#index as HTML
+  [1m[36mPlayer Load (0.4ms)[0m  [1m[34mSELECT "players".* FROM "players"[0m
+  ↳ app/controllers/players_controller.rb:8:in `index'
+Completed 200 OK in 14ms (Views: 13.6ms | ActiveRecord: 0.4ms | Allocations: 24560)
+
+
+Started GET "/players" for ::1 at 2019-09-10 14:22:12 -0400
+Processing by PlayersController#index as HTML
+  [1m[36mPlayer Load (0.4ms)[0m  [1m[34mSELECT "players".* FROM "players"[0m
+  ↳ app/controllers/players_controller.rb:8:in `index'
+Completed 200 OK in 22ms (Views: 21.2ms | ActiveRecord: 0.4ms | Allocations: 24560)
+
+
+Started GET "/players" for ::1 at 2019-09-10 14:22:31 -0400
+Processing by PlayersController#index as HTML
+  [1m[36mPlayer Load (0.6ms)[0m  [1m[34mSELECT "players".* FROM "players"[0m
+  ↳ app/controllers/players_controller.rb:8:in `index'
+Completed 200 OK in 27ms (Views: 26.3ms | ActiveRecord: 0.6ms | Allocations: 24563)
+
+
+Started GET "/players" for ::1 at 2019-09-10 14:22:51 -0400
+Processing by PlayersController#index as HTML
+  [1m[36mPlayer Load (0.5ms)[0m  [1m[34mSELECT "players".* FROM "players"[0m
+  ↳ app/controllers/players_controller.rb:8:in `index'
+Completed 200 OK in 20ms (Views: 19.2ms | ActiveRecord: 0.5ms | Allocations: 24560)
+
+
+Started GET "/players" for ::1 at 2019-09-10 14:22:54 -0400
+Processing by PlayersController#index as HTML
+  [1m[36mPlayer Load (0.5ms)[0m  [1m[34mSELECT "players".* FROM "players"[0m
+  ↳ app/controllers/players_controller.rb:8:in `index'
+Completed 200 OK in 20ms (Views: 19.2ms | ActiveRecord: 0.5ms | Allocations: 24560)
+
+
+Started GET "/players" for ::1 at 2019-09-10 14:23:17 -0400
+Processing by PlayersController#index as HTML
+  [1m[36mPlayer Load (0.5ms)[0m  [1m[34mSELECT "players".* FROM "players"[0m
+  ↳ app/controllers/players_controller.rb:8:in `index'
+Completed 200 OK in 27ms (Views: 26.3ms | ActiveRecord: 0.5ms | Allocations: 24563)
+
+
+Started GET "/players" for ::1 at 2019-09-10 14:26:41 -0400
+Processing by PlayersController#index as HTML
+  [1m[36mPlayer Load (0.6ms)[0m  [1m[34mSELECT "players".* FROM "players"[0m
+  ↳ app/controllers/players_controller.rb:8:in `index'
+Completed 200 OK in 54ms (Views: 52.9ms | ActiveRecord: 0.6ms | Allocations: 24560)
+
+
+Started GET "/players" for ::1 at 2019-09-10 14:27:29 -0400
+Processing by PlayersController#index as HTML
+  [1m[36mPlayer Load (0.5ms)[0m  [1m[34mSELECT "players".* FROM "players"[0m
+  ↳ app/controllers/players_controller.rb:8:in `index'
+Completed 200 OK in 29ms (Views: 28.7ms | ActiveRecord: 0.5ms | Allocations: 24563)
+
+
+Started GET "/players" for ::1 at 2019-09-10 14:28:15 -0400
+Processing by PlayersController#index as HTML
+  [1m[36mPlayer Load (0.4ms)[0m  [1m[34mSELECT "players".* FROM "players"[0m
+  ↳ app/controllers/players_controller.rb:8:in `index'
+Completed 200 OK in 19ms (Views: 18.1ms | ActiveRecord: 0.4ms | Allocations: 24560)
+
+
+Started GET "/players" for ::1 at 2019-09-10 14:28:47 -0400
+Processing by PlayersController#index as HTML
+  [1m[36mPlayer Load (0.4ms)[0m  [1m[34mSELECT "players".* FROM "players"[0m
+  ↳ app/controllers/players_controller.rb:8:in `index'
+Completed 200 OK in 21ms (Views: 20.7ms | ActiveRecord: 0.4ms | Allocations: 24560)
+
+
+Started GET "/players" for ::1 at 2019-09-10 14:29:22 -0400
+Processing by PlayersController#index as HTML
+  [1m[36mPlayer Load (0.6ms)[0m  [1m[34mSELECT "players".* FROM "players"[0m
+  ↳ app/controllers/players_controller.rb:8:in `index'
+Completed 200 OK in 22ms (Views: 21.6ms | ActiveRecord: 0.6ms | Allocations: 24560)
+
+
+Started GET "/players" for ::1 at 2019-09-10 14:35:42 -0400
+Processing by PlayersController#index as HTML
+  [1m[36mPlayer Load (0.6ms)[0m  [1m[34mSELECT "players".* FROM "players"[0m
+  ↳ app/controllers/players_controller.rb:8:in `index'
+Completed 200 OK in 14ms (Views: 12.9ms | ActiveRecord: 0.6ms | Allocations: 24616)
+
+
+Started GET "/players" for ::1 at 2019-09-10 14:36:23 -0400
+Processing by PlayersController#index as HTML
+  [1m[36mPlayer Load (0.6ms)[0m  [1m[34mSELECT "players".* FROM "players"[0m
+  ↳ app/controllers/players_controller.rb:8:in `index'
+Completed 200 OK in 25ms (Views: 23.9ms | ActiveRecord: 0.6ms | Allocations: 24563)
+
+
+Started GET "/players" for ::1 at 2019-09-10 14:37:29 -0400
+Processing by PlayersController#index as HTML
+  [1m[36mPlayer Load (0.4ms)[0m  [1m[34mSELECT "players".* FROM "players"[0m
+  ↳ app/controllers/players_controller.rb:8:in `index'
+Completed 200 OK in 16ms (Views: 15.2ms | ActiveRecord: 0.4ms | Allocations: 24560)
+
+
+Started GET "/players" for ::1 at 2019-09-10 14:37:35 -0400
+Processing by PlayersController#index as HTML
+  [1m[36mPlayer Load (0.4ms)[0m  [1m[34mSELECT "players".* FROM "players"[0m
+  ↳ app/controllers/players_controller.rb:8:in `index'
+Completed 200 OK in 16ms (Views: 15.4ms | ActiveRecord: 0.4ms | Allocations: 24560)
+
+
+Started GET "/players" for ::1 at 2019-09-10 14:37:41 -0400
+Processing by PlayersController#index as HTML
+  [1m[36mPlayer Load (0.4ms)[0m  [1m[34mSELECT "players".* FROM "players"[0m
+  ↳ app/controllers/players_controller.rb:8:in `index'
+Completed 200 OK in 22ms (Views: 21.4ms | ActiveRecord: 0.4ms | Allocations: 24560)
+
+
+Started GET "/players" for ::1 at 2019-09-10 14:39:12 -0400
+Processing by PlayersController#index as HTML
+  [1m[36mPlayer Load (0.4ms)[0m  [1m[34mSELECT "players".* FROM "players"[0m
+  ↳ app/controllers/players_controller.rb:8:in `index'
+Completed 200 OK in 20ms (Views: 19.2ms | ActiveRecord: 0.4ms | Allocations: 24560)
+
+
+Started GET "/players" for ::1 at 2019-09-10 14:39:37 -0400
+Processing by PlayersController#index as HTML
+  [1m[36mPlayer Load (0.5ms)[0m  [1m[34mSELECT "players".* FROM "players"[0m
+  ↳ app/controllers/players_controller.rb:8:in `index'
+Completed 200 OK in 35ms (Views: 34.4ms | ActiveRecord: 0.5ms | Allocations: 24563)
+
+
+Started GET "/players" for ::1 at 2019-09-10 14:40:20 -0400
+Processing by PlayersController#index as HTML
+  [1m[36mPlayer Load (0.5ms)[0m  [1m[34mSELECT "players".* FROM "players"[0m
+  ↳ app/controllers/players_controller.rb:8:in `index'
+Completed 200 OK in 16ms (Views: 15.5ms | ActiveRecord: 0.5ms | Allocations: 24560)
+
+
+Started GET "/players" for ::1 at 2019-09-10 14:41:48 -0400
+Processing by PlayersController#index as HTML
+  [1m[36mPlayer Load (0.5ms)[0m  [1m[34mSELECT "players".* FROM "players"[0m
+  ↳ app/controllers/players_controller.rb:8:in `index'
+Completed 200 OK in 18ms (Views: 17.0ms | ActiveRecord: 0.5ms | Allocations: 24560)
+
+
+Started GET "/players" for ::1 at 2019-09-10 14:43:05 -0400
+Processing by PlayersController#index as HTML
+  [1m[36mPlayer Load (0.5ms)[0m  [1m[34mSELECT "players".* FROM "players"[0m
+  ↳ app/controllers/players_controller.rb:8:in `index'
+Completed 200 OK in 19ms (Views: 18.3ms | ActiveRecord: 0.5ms | Allocations: 24560)
+
+
+Started GET "/playersnull" for ::1 at 2019-09-10 14:45:08 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/playersnull"):
+  
+actionpack (6.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+rack-cors (1.0.3) lib/rack/cors.rb:95:in `call'
+railties (6.0.0) lib/rails/engine.rb:526:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/playersnull" for ::1 at 2019-09-10 14:45:19 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/playersnull"):
+  
+actionpack (6.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+rack-cors (1.0.3) lib/rack/cors.rb:95:in `call'
+railties (6.0.0) lib/rails/engine.rb:526:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/players/null" for ::1 at 2019-09-10 14:45:29 -0400
+Processing by PlayersController#show as HTML
+  Parameters: {"id"=>"null"}
+  [1m[36mPlayer Load (0.3ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/players_controller.rb:44:in `set_player'
+Completed 404 Not Found in 4ms (ActiveRecord: 0.6ms | Allocations: 1077)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Player with 'id'=null):
+  
+app/controllers/players_controller.rb:44:in `set_player'
+Started GET "/players" for ::1 at 2019-09-10 14:46:50 -0400
+Processing by PlayersController#index as HTML
+  [1m[36mPlayer Load (0.6ms)[0m  [1m[34mSELECT "players".* FROM "players"[0m
+  ↳ app/controllers/players_controller.rb:8:in `index'
+Completed 200 OK in 19ms (Views: 18.2ms | ActiveRecord: 0.6ms | Allocations: 24565)
+
+
+Started GET "/players" for ::1 at 2019-09-10 14:47:06 -0400
+Processing by PlayersController#index as HTML
+  [1m[36mPlayer Load (0.6ms)[0m  [1m[34mSELECT "players".* FROM "players"[0m
+  ↳ app/controllers/players_controller.rb:8:in `index'
+Completed 200 OK in 16ms (Views: 15.3ms | ActiveRecord: 0.6ms | Allocations: 24560)
+
+
+Started GET "/players" for ::1 at 2019-09-10 14:47:19 -0400
+Processing by PlayersController#index as HTML
+  [1m[36mPlayer Load (0.4ms)[0m  [1m[34mSELECT "players".* FROM "players"[0m
+  ↳ app/controllers/players_controller.rb:8:in `index'
+Completed 200 OK in 30ms (Views: 29.4ms | ActiveRecord: 0.4ms | Allocations: 24563)
+
+
+Started GET "/players" for ::1 at 2019-09-10 14:47:23 -0400
+Processing by PlayersController#index as HTML
+  [1m[36mPlayer Load (0.7ms)[0m  [1m[34mSELECT "players".* FROM "players"[0m
+  ↳ app/controllers/players_controller.rb:8:in `index'
+Completed 200 OK in 17ms (Views: 16.0ms | ActiveRecord: 0.7ms | Allocations: 24560)
+
+
+Started GET "/players" for ::1 at 2019-09-10 14:47:23 -0400
+Processing by PlayersController#index as HTML
+  [1m[36mPlayer Load (0.4ms)[0m  [1m[34mSELECT "players".* FROM "players"[0m
+  ↳ app/controllers/players_controller.rb:8:in `index'
+Completed 200 OK in 19ms (Views: 18.2ms | ActiveRecord: 0.4ms | Allocations: 24560)
+
+
+Started GET "/players" for ::1 at 2019-09-10 14:48:04 -0400
+Processing by PlayersController#index as HTML
+  [1m[36mPlayer Load (0.4ms)[0m  [1m[34mSELECT "players".* FROM "players"[0m
+  ↳ app/controllers/players_controller.rb:8:in `index'
+Completed 200 OK in 21ms (Views: 20.8ms | ActiveRecord: 0.4ms | Allocations: 24563)
+
+
+Started GET "/players" for ::1 at 2019-09-10 14:49:49 -0400
+Processing by PlayersController#index as HTML
+  [1m[36mPlayer Load (0.5ms)[0m  [1m[34mSELECT "players".* FROM "players"[0m
+  ↳ app/controllers/players_controller.rb:8:in `index'
+Completed 200 OK in 22ms (Views: 21.2ms | ActiveRecord: 0.5ms | Allocations: 24560)
+
+
+Started GET "/players" for ::1 at 2019-09-10 14:50:13 -0400
+Processing by PlayersController#index as HTML
+  [1m[36mPlayer Load (0.5ms)[0m  [1m[34mSELECT "players".* FROM "players"[0m
+  ↳ app/controllers/players_controller.rb:8:in `index'
+Completed 200 OK in 20ms (Views: 19.1ms | ActiveRecord: 0.5ms | Allocations: 24560)
+
+
+Started GET "/players" for ::1 at 2019-09-10 14:56:52 -0400
+Processing by PlayersController#index as HTML
+  [1m[36mPlayer Load (1.1ms)[0m  [1m[34mSELECT "players".* FROM "players"[0m
+  ↳ app/controllers/players_controller.rb:8:in `index'
+Completed 200 OK in 26ms (Views: 24.8ms | ActiveRecord: 1.1ms | Allocations: 24619)
+
+
+Started GET "/players" for ::1 at 2019-09-10 14:56:52 -0400
+Processing by PlayersController#index as HTML
+  [1m[36mPlayer Load (0.5ms)[0m  [1m[34mSELECT "players".* FROM "players"[0m
+  ↳ app/controllers/players_controller.rb:8:in `index'
+Completed 200 OK in 56ms (Views: 55.3ms | ActiveRecord: 0.5ms | Allocations: 24560)
+
+
+Started GET "/players" for ::1 at 2019-09-10 14:56:58 -0400
+Processing by PlayersController#index as HTML
+  [1m[36mPlayer Load (0.5ms)[0m  [1m[34mSELECT "players".* FROM "players"[0m
+  ↳ app/controllers/players_controller.rb:8:in `index'
+Completed 200 OK in 39ms (Views: 38.0ms | ActiveRecord: 0.5ms | Allocations: 24577)
+
+
+Started GET "/players" for ::1 at 2019-09-10 14:56:58 -0400
+Processing by PlayersController#index as HTML
+  [1m[36mPlayer Load (0.6ms)[0m  [1m[34mSELECT "players".* FROM "players"[0m
+  ↳ app/controllers/players_controller.rb:8:in `index'
+Completed 200 OK in 26ms (Views: 24.8ms | ActiveRecord: 0.6ms | Allocations: 24560)
+
+
+Started GET "/players" for ::1 at 2019-09-10 15:00:59 -0400
+Processing by PlayersController#index as HTML
+  [1m[36mPlayer Load (0.6ms)[0m  [1m[34mSELECT "players".* FROM "players"[0m
+  ↳ app/controllers/players_controller.rb:8:in `index'
+Completed 200 OK in 18ms (Views: 17.4ms | ActiveRecord: 0.6ms | Allocations: 24560)
+
+
+Started GET "/players" for ::1 at 2019-09-10 15:05:24 -0400
+Processing by PlayersController#index as HTML
+  [1m[36mPlayer Load (0.9ms)[0m  [1m[34mSELECT "players".* FROM "players"[0m
+  ↳ app/controllers/players_controller.rb:8:in `index'
+Completed 200 OK in 21ms (Views: 20.3ms | ActiveRecord: 0.9ms | Allocations: 24560)
+
+
+Started GET "/players" for ::1 at 2019-09-10 15:05:29 -0400
+Processing by PlayersController#index as HTML
+  [1m[36mPlayer Load (1.3ms)[0m  [1m[34mSELECT "players".* FROM "players"[0m
+  ↳ app/controllers/players_controller.rb:8:in `index'
+Completed 200 OK in 21ms (Views: 19.9ms | ActiveRecord: 1.3ms | Allocations: 24560)
+
+
+Started GET "/players" for ::1 at 2019-09-10 15:05:44 -0400
+Processing by PlayersController#index as HTML
+  [1m[36mPlayer Load (0.5ms)[0m  [1m[34mSELECT "players".* FROM "players"[0m
+  ↳ app/controllers/players_controller.rb:8:in `index'
+Completed 200 OK in 18ms (Views: 17.4ms | ActiveRecord: 0.5ms | Allocations: 24560)
+
+
+Started GET "/players" for ::1 at 2019-09-10 15:25:38 -0400
+Processing by PlayersController#index as HTML
+  [1m[36mPlayer Load (1.0ms)[0m  [1m[34mSELECT "players".* FROM "players"[0m
+  ↳ app/controllers/players_controller.rb:8:in `index'
+Completed 200 OK in 17ms (Views: 15.7ms | ActiveRecord: 1.0ms | Allocations: 24617)
+
+
+Started GET "/players" for ::1 at 2019-09-10 15:39:12 -0400
+Processing by PlayersController#index as HTML
+  [1m[36mPlayer Load (0.8ms)[0m  [1m[34mSELECT "players".* FROM "players"[0m
+  ↳ app/controllers/players_controller.rb:8:in `index'
+Completed 200 OK in 14ms (Views: 13.4ms | ActiveRecord: 0.8ms | Allocations: 24616)
+
+
+Started GET "/players" for ::1 at 2019-09-10 15:53:40 -0400
+Processing by PlayersController#index as HTML
+  [1m[36mPlayer Load (0.6ms)[0m  [1m[34mSELECT "players".* FROM "players"[0m
+  ↳ app/controllers/players_controller.rb:8:in `index'
+Completed 200 OK in 14ms (Views: 12.9ms | ActiveRecord: 0.6ms | Allocations: 24616)
+
+
+Started GET "/players" for ::1 at 2019-09-10 16:00:13 -0400
+Processing by PlayersController#index as HTML
+  [1m[36mPlayer Load (0.8ms)[0m  [1m[34mSELECT "players".* FROM "players"[0m
+  ↳ app/controllers/players_controller.rb:8:in `index'
+Completed 200 OK in 14ms (Views: 12.6ms | ActiveRecord: 0.8ms | Allocations: 24616)
+
+
+Started GET "/players" for ::1 at 2019-09-10 16:00:18 -0400
+Processing by PlayersController#index as HTML
+  [1m[36mPlayer Load (0.5ms)[0m  [1m[34mSELECT "players".* FROM "players"[0m
+  ↳ app/controllers/players_controller.rb:8:in `index'
+Completed 200 OK in 35ms (Views: 34.0ms | ActiveRecord: 0.5ms | Allocations: 24584)
+
+
+Started GET "/players" for ::1 at 2019-09-10 16:01:25 -0400
+Processing by PlayersController#index as HTML
+  [1m[36mPlayer Load (0.6ms)[0m  [1m[34mSELECT "players".* FROM "players"[0m
+  ↳ app/controllers/players_controller.rb:8:in `index'
+Completed 200 OK in 21ms (Views: 20.3ms | ActiveRecord: 0.6ms | Allocations: 24560)
+
+
+Started GET "/players" for ::1 at 2019-09-10 16:01:32 -0400
+Processing by PlayersController#index as HTML
+  [1m[36mPlayer Load (0.3ms)[0m  [1m[34mSELECT "players".* FROM "players"[0m
+  ↳ app/controllers/players_controller.rb:8:in `index'
+Completed 200 OK in 15ms (Views: 14.0ms | ActiveRecord: 0.3ms | Allocations: 24560)
+
+
+Started GET "/players" for ::1 at 2019-09-10 16:04:33 -0400
+Processing by PlayersController#index as HTML
+  [1m[36mPlayer Load (0.6ms)[0m  [1m[34mSELECT "players".* FROM "players"[0m
+  ↳ app/controllers/players_controller.rb:8:in `index'
+Completed 200 OK in 26ms (Views: 25.2ms | ActiveRecord: 0.6ms | Allocations: 24560)
+
+
+Started GET "/players" for ::1 at 2019-09-10 16:04:36 -0400
+Processing by PlayersController#index as HTML
+  [1m[36mPlayer Load (0.5ms)[0m  [1m[34mSELECT "players".* FROM "players"[0m
+  ↳ app/controllers/players_controller.rb:8:in `index'
+Completed 200 OK in 32ms (Views: 31.6ms | ActiveRecord: 0.5ms | Allocations: 24563)
+
+
+Started GET "/players" for ::1 at 2019-09-10 16:04:44 -0400
+Processing by PlayersController#index as HTML
+  [1m[36mPlayer Load (0.4ms)[0m  [1m[34mSELECT "players".* FROM "players"[0m
+  ↳ app/controllers/players_controller.rb:8:in `index'
+Completed 200 OK in 16ms (Views: 15.0ms | ActiveRecord: 0.4ms | Allocations: 24560)
+
+
+Started GET "/players" for ::1 at 2019-09-10 16:07:01 -0400
+Processing by PlayersController#index as HTML
+  [1m[36mPlayer Load (0.6ms)[0m  [1m[34mSELECT "players".* FROM "players"[0m
+  ↳ app/controllers/players_controller.rb:8:in `index'
+Completed 200 OK in 18ms (Views: 17.5ms | ActiveRecord: 0.6ms | Allocations: 24560)
+
+
+Started GET "/players" for ::1 at 2019-09-10 16:07:04 -0400
+Processing by PlayersController#index as HTML
+  [1m[36mPlayer Load (0.6ms)[0m  [1m[34mSELECT "players".* FROM "players"[0m
+  ↳ app/controllers/players_controller.rb:8:in `index'
+Completed 200 OK in 16ms (Views: 15.5ms | ActiveRecord: 0.6ms | Allocations: 24560)
+
+
+Started GET "/players" for ::1 at 2019-09-10 16:08:25 -0400
+Processing by PlayersController#index as HTML
+  [1m[36mPlayer Load (0.7ms)[0m  [1m[34mSELECT "players".* FROM "players"[0m
+  ↳ app/controllers/players_controller.rb:8:in `index'
+Completed 200 OK in 36ms (Views: 35.1ms | ActiveRecord: 0.7ms | Allocations: 24563)
+
+
+Started GET "/players" for ::1 at 2019-09-10 16:09:53 -0400
+Processing by PlayersController#index as HTML
+  [1m[36mPlayer Load (0.5ms)[0m  [1m[34mSELECT "players".* FROM "players"[0m
+  ↳ app/controllers/players_controller.rb:8:in `index'
+Completed 200 OK in 23ms (Views: 21.8ms | ActiveRecord: 0.5ms | Allocations: 24560)
+
+
+Started GET "/players" for ::1 at 2019-09-10 16:10:44 -0400
+Processing by PlayersController#index as HTML
+  [1m[36mPlayer Load (0.7ms)[0m  [1m[34mSELECT "players".* FROM "players"[0m
+  ↳ app/controllers/players_controller.rb:8:in `index'
+Completed 200 OK in 20ms (Views: 19.4ms | ActiveRecord: 0.7ms | Allocations: 24560)
+
+
+Started GET "/players" for ::1 at 2019-09-10 16:10:46 -0400
+Processing by PlayersController#index as HTML
+  [1m[36mPlayer Load (0.4ms)[0m  [1m[34mSELECT "players".* FROM "players"[0m
+  ↳ app/controllers/players_controller.rb:8:in `index'
+Completed 200 OK in 36ms (Views: 35.8ms | ActiveRecord: 0.4ms | Allocations: 24563)
+
+
+Started GET "/players" for ::1 at 2019-09-10 16:10:56 -0400
+Processing by PlayersController#index as HTML
+  [1m[36mPlayer Load (0.5ms)[0m  [1m[34mSELECT "players".* FROM "players"[0m
+  ↳ app/controllers/players_controller.rb:8:in `index'
+Completed 200 OK in 40ms (Views: 39.8ms | ActiveRecord: 0.5ms | Allocations: 24560)
+
+
+Started GET "/players" for ::1 at 2019-09-10 16:13:49 -0400
+Processing by PlayersController#index as HTML
+  [1m[36mPlayer Load (0.6ms)[0m  [1m[34mSELECT "players".* FROM "players"[0m
+  ↳ app/controllers/players_controller.rb:8:in `index'
+Completed 200 OK in 59ms (Views: 58.0ms | ActiveRecord: 0.6ms | Allocations: 24570)
+
+
+Started GET "/players" for ::1 at 2019-09-10 19:34:41 -0400
+Processing by PlayersController#index as HTML
+  [1m[36mPlayer Load (1.0ms)[0m  [1m[34mSELECT "players".* FROM "players"[0m
+  ↳ app/controllers/players_controller.rb:8:in `index'
+Completed 200 OK in 23ms (Views: 21.9ms | ActiveRecord: 1.0ms | Allocations: 24616)
+
+
+Started GET "/players" for ::1 at 2019-09-10 19:36:07 -0400
+Processing by PlayersController#index as HTML
+  [1m[36mPlayer Load (0.5ms)[0m  [1m[34mSELECT "players".* FROM "players"[0m
+  ↳ app/controllers/players_controller.rb:8:in `index'
+Completed 200 OK in 17ms (Views: 16.5ms | ActiveRecord: 0.5ms | Allocations: 24560)
+
+
+Started GET "/players" for ::1 at 2019-09-10 19:37:04 -0400
+Processing by PlayersController#index as HTML
+  [1m[36mPlayer Load (0.5ms)[0m  [1m[34mSELECT "players".* FROM "players"[0m
+  ↳ app/controllers/players_controller.rb:8:in `index'
+Completed 200 OK in 21ms (Views: 20.1ms | ActiveRecord: 0.5ms | Allocations: 24560)
+
+
+Started GET "/players" for ::1 at 2019-09-10 19:37:34 -0400
+Processing by PlayersController#index as HTML
+  [1m[36mPlayer Load (0.5ms)[0m  [1m[34mSELECT "players".* FROM "players"[0m
+  ↳ app/controllers/players_controller.rb:8:in `index'
+Completed 200 OK in 24ms (Views: 23.6ms | ActiveRecord: 0.5ms | Allocations: 24560)
+
+
+Started GET "/players" for ::1 at 2019-09-10 19:38:17 -0400
+Processing by PlayersController#index as HTML
+  [1m[36mPlayer Load (0.5ms)[0m  [1m[34mSELECT "players".* FROM "players"[0m
+  ↳ app/controllers/players_controller.rb:8:in `index'
+Completed 200 OK in 38ms (Views: 37.0ms | ActiveRecord: 0.5ms | Allocations: 24563)
+
+
+Started GET "/players" for ::1 at 2019-09-10 19:41:17 -0400
+Processing by PlayersController#index as HTML
+  [1m[36mPlayer Load (0.6ms)[0m  [1m[34mSELECT "players".* FROM "players"[0m
+  ↳ app/controllers/players_controller.rb:8:in `index'
+Completed 200 OK in 25ms (Views: 24.3ms | ActiveRecord: 0.6ms | Allocations: 24560)
+
+
+Started GET "/players" for ::1 at 2019-09-10 19:41:39 -0400
+Processing by PlayersController#index as HTML
+  [1m[36mPlayer Load (0.4ms)[0m  [1m[34mSELECT "players".* FROM "players"[0m
+  ↳ app/controllers/players_controller.rb:8:in `index'
+Completed 200 OK in 25ms (Views: 23.9ms | ActiveRecord: 0.4ms | Allocations: 24560)
+
+
+Started GET "/players" for ::1 at 2019-09-10 19:42:06 -0400
+Processing by PlayersController#index as HTML
+  [1m[36mPlayer Load (0.5ms)[0m  [1m[34mSELECT "players".* FROM "players"[0m
+  ↳ app/controllers/players_controller.rb:8:in `index'
+Completed 200 OK in 24ms (Views: 23.7ms | ActiveRecord: 0.5ms | Allocations: 24560)
+
+
+Started GET "/players" for ::1 at 2019-09-10 19:42:31 -0400
+Processing by PlayersController#index as HTML
+  [1m[36mPlayer Load (0.6ms)[0m  [1m[34mSELECT "players".* FROM "players"[0m
+  ↳ app/controllers/players_controller.rb:8:in `index'
+Completed 200 OK in 23ms (Views: 22.3ms | ActiveRecord: 0.6ms | Allocations: 24560)
+
+
+Started GET "/players" for ::1 at 2019-09-10 19:43:58 -0400
+Processing by PlayersController#index as HTML
+  [1m[36mPlayer Load (0.4ms)[0m  [1m[34mSELECT "players".* FROM "players"[0m
+  ↳ app/controllers/players_controller.rb:8:in `index'
+Completed 200 OK in 35ms (Views: 33.9ms | ActiveRecord: 0.4ms | Allocations: 24563)
+
+
+Started GET "/players" for ::1 at 2019-09-10 19:44:19 -0400
+Processing by PlayersController#index as HTML
+  [1m[36mPlayer Load (0.5ms)[0m  [1m[34mSELECT "players".* FROM "players"[0m
+  ↳ app/controllers/players_controller.rb:8:in `index'
+Completed 200 OK in 19ms (Views: 18.7ms | ActiveRecord: 0.5ms | Allocations: 24560)
+
+
+Started GET "/players" for ::1 at 2019-09-10 19:47:16 -0400
+Processing by PlayersController#index as HTML
+  [1m[36mPlayer Load (0.5ms)[0m  [1m[34mSELECT "players".* FROM "players"[0m
+  ↳ app/controllers/players_controller.rb:8:in `index'
+Completed 200 OK in 22ms (Views: 21.8ms | ActiveRecord: 0.5ms | Allocations: 24560)
+
+
+Started GET "/players" for ::1 at 2019-09-10 19:47:24 -0400
+Processing by PlayersController#index as HTML
+  [1m[36mPlayer Load (0.4ms)[0m  [1m[34mSELECT "players".* FROM "players"[0m
+  ↳ app/controllers/players_controller.rb:8:in `index'
+Completed 200 OK in 24ms (Views: 23.1ms | ActiveRecord: 0.4ms | Allocations: 24560)
+
+
+Started GET "/players" for ::1 at 2019-09-10 19:47:33 -0400
+Processing by PlayersController#index as HTML
+  [1m[36mPlayer Load (0.7ms)[0m  [1m[34mSELECT "players".* FROM "players"[0m
+  ↳ app/controllers/players_controller.rb:8:in `index'
+Completed 200 OK in 36ms (Views: 35.2ms | ActiveRecord: 0.7ms | Allocations: 24563)
+
+
+Started GET "/players" for ::1 at 2019-09-10 19:48:06 -0400
+Processing by PlayersController#index as HTML
+  [1m[36mPlayer Load (0.5ms)[0m  [1m[34mSELECT "players".* FROM "players"[0m
+  ↳ app/controllers/players_controller.rb:8:in `index'
+Completed 200 OK in 26ms (Views: 25.4ms | ActiveRecord: 0.5ms | Allocations: 24560)
+
+
+Started GET "/players" for ::1 at 2019-09-10 19:57:42 -0400
+Processing by PlayersController#index as HTML
+  [1m[36mPlayer Load (0.7ms)[0m  [1m[34mSELECT "players".* FROM "players"[0m
+  ↳ app/controllers/players_controller.rb:8:in `index'
+Completed 200 OK in 18ms (Views: 16.8ms | ActiveRecord: 0.7ms | Allocations: 24616)
+
+
+Started GET "/players" for ::1 at 2019-09-10 20:01:04 -0400
+Processing by PlayersController#index as HTML
+  [1m[36mPlayer Load (0.6ms)[0m  [1m[34mSELECT "players".* FROM "players"[0m
+  ↳ app/controllers/players_controller.rb:8:in `index'
+Completed 200 OK in 29ms (Views: 28.6ms | ActiveRecord: 0.6ms | Allocations: 24563)
+
+
+Started GET "/players" for ::1 at 2019-09-10 20:01:46 -0400
+Processing by PlayersController#index as HTML
+  [1m[36mPlayer Load (0.4ms)[0m  [1m[34mSELECT "players".* FROM "players"[0m
+  ↳ app/controllers/players_controller.rb:8:in `index'
+Completed 200 OK in 17ms (Views: 16.1ms | ActiveRecord: 0.4ms | Allocations: 24560)
+
+
+Started GET "/players" for ::1 at 2019-09-10 20:02:28 -0400
+Processing by PlayersController#index as HTML
+  [1m[36mPlayer Load (0.5ms)[0m  [1m[34mSELECT "players".* FROM "players"[0m
+  ↳ app/controllers/players_controller.rb:8:in `index'
+Completed 200 OK in 20ms (Views: 19.5ms | ActiveRecord: 0.5ms | Allocations: 24560)
+
+
+Started GET "/players" for ::1 at 2019-09-10 20:02:54 -0400
+Processing by PlayersController#index as HTML
+  [1m[36mPlayer Load (0.6ms)[0m  [1m[34mSELECT "players".* FROM "players"[0m
+  ↳ app/controllers/players_controller.rb:8:in `index'
+Completed 200 OK in 31ms (Views: 30.0ms | ActiveRecord: 0.6ms | Allocations: 24563)
+
+
+Started GET "/players" for ::1 at 2019-09-10 20:03:34 -0400
+Processing by PlayersController#index as HTML
+  [1m[36mPlayer Load (0.5ms)[0m  [1m[34mSELECT "players".* FROM "players"[0m
+  ↳ app/controllers/players_controller.rb:8:in `index'
+Completed 200 OK in 40ms (Views: 38.9ms | ActiveRecord: 0.5ms | Allocations: 24560)
+
+
+Started GET "/players" for ::1 at 2019-09-10 20:04:21 -0400
+Processing by PlayersController#index as HTML
+  [1m[36mPlayer Load (0.4ms)[0m  [1m[34mSELECT "players".* FROM "players"[0m
+  ↳ app/controllers/players_controller.rb:8:in `index'
+Completed 200 OK in 61ms (Views: 60.7ms | ActiveRecord: 0.4ms | Allocations: 24577)
+
+
+Started GET "/players" for ::1 at 2019-09-10 20:04:33 -0400
+Processing by PlayersController#index as HTML
+  [1m[36mPlayer Load (0.9ms)[0m  [1m[34mSELECT "players".* FROM "players"[0m
+  ↳ app/controllers/players_controller.rb:8:in `index'
+Completed 200 OK in 20ms (Views: 18.6ms | ActiveRecord: 0.9ms | Allocations: 24560)
+
+
+Started GET "/players" for ::1 at 2019-09-10 20:07:24 -0400
+Processing by PlayersController#index as HTML
+  [1m[36mPlayer Load (0.5ms)[0m  [1m[34mSELECT "players".* FROM "players"[0m
+  ↳ app/controllers/players_controller.rb:8:in `index'
+Completed 200 OK in 22ms (Views: 20.8ms | ActiveRecord: 0.5ms | Allocations: 24560)
+
+
+Started GET "/players" for ::1 at 2019-09-10 20:12:31 -0400
+Processing by PlayersController#index as HTML
+  [1m[36mPlayer Load (0.5ms)[0m  [1m[34mSELECT "players".* FROM "players"[0m
+  ↳ app/controllers/players_controller.rb:8:in `index'
+Completed 200 OK in 22ms (Views: 21.5ms | ActiveRecord: 0.5ms | Allocations: 24560)
+
+
+Started GET "/players" for ::1 at 2019-09-10 20:31:18 -0400
+Processing by PlayersController#index as HTML
+  [1m[36mPlayer Load (0.9ms)[0m  [1m[34mSELECT "players".* FROM "players"[0m
+  ↳ app/controllers/players_controller.rb:8:in `index'
+Completed 200 OK in 25ms (Views: 23.6ms | ActiveRecord: 0.9ms | Allocations: 24616)
+
+
+Started GET "/players" for ::1 at 2019-09-10 20:32:30 -0400
+Processing by PlayersController#index as HTML
+  [1m[36mPlayer Load (0.5ms)[0m  [1m[34mSELECT "players".* FROM "players"[0m
+  ↳ app/controllers/players_controller.rb:8:in `index'
+Completed 200 OK in 36ms (Views: 35.2ms | ActiveRecord: 0.5ms | Allocations: 24563)
+
+
+Started GET "/players" for ::1 at 2019-09-10 20:33:25 -0400
+Processing by PlayersController#index as HTML
+  [1m[36mPlayer Load (0.5ms)[0m  [1m[34mSELECT "players".* FROM "players"[0m
+  ↳ app/controllers/players_controller.rb:8:in `index'
+Completed 200 OK in 27ms (Views: 25.8ms | ActiveRecord: 0.5ms | Allocations: 24560)
+
+
+Started GET "/players" for ::1 at 2019-09-10 20:35:03 -0400
+Processing by PlayersController#index as HTML
+  [1m[36mPlayer Load (0.6ms)[0m  [1m[34mSELECT "players".* FROM "players"[0m
+  ↳ app/controllers/players_controller.rb:8:in `index'
+Completed 200 OK in 21ms (Views: 20.1ms | ActiveRecord: 0.6ms | Allocations: 24560)
+
+
+Started GET "/players" for ::1 at 2019-09-10 20:35:35 -0400
+Processing by PlayersController#index as HTML
+  [1m[36mPlayer Load (0.5ms)[0m  [1m[34mSELECT "players".* FROM "players"[0m
+  ↳ app/controllers/players_controller.rb:8:in `index'
+Completed 200 OK in 23ms (Views: 22.4ms | ActiveRecord: 0.5ms | Allocations: 24560)
+
+
+Started GET "/players" for ::1 at 2019-09-11 10:18:47 -0400
+Processing by PlayersController#index as HTML
+  [1m[36mPlayer Load (1.1ms)[0m  [1m[34mSELECT "players".* FROM "players"[0m
+  ↳ app/controllers/players_controller.rb:8:in `index'
+Completed 200 OK in 37ms (Views: 35.4ms | ActiveRecord: 1.1ms | Allocations: 24619)
+
+
+Started GET "/players" for ::1 at 2019-09-11 10:20:30 -0400
+Processing by PlayersController#index as HTML
+  [1m[36mPlayer Load (0.3ms)[0m  [1m[34mSELECT "players".* FROM "players"[0m
+  ↳ app/controllers/players_controller.rb:8:in `index'
+Completed 200 OK in 21ms (Views: 20.9ms | ActiveRecord: 0.3ms | Allocations: 24560)
+
+
+Started GET "/players" for ::1 at 2019-09-11 10:23:12 -0400
+Processing by PlayersController#index as HTML
+  [1m[36mPlayer Load (0.6ms)[0m  [1m[34mSELECT "players".* FROM "players"[0m
+  ↳ app/controllers/players_controller.rb:8:in `index'
+Completed 200 OK in 21ms (Views: 20.6ms | ActiveRecord: 0.6ms | Allocations: 24560)
+
+
+Started GET "/players" for ::1 at 2019-09-11 10:26:17 -0400
+Processing by PlayersController#index as HTML
+  [1m[36mPlayer Load (0.4ms)[0m  [1m[34mSELECT "players".* FROM "players"[0m
+  ↳ app/controllers/players_controller.rb:8:in `index'
+Completed 200 OK in 18ms (Views: 17.2ms | ActiveRecord: 0.4ms | Allocations: 24560)
+
+
+Started GET "/players" for ::1 at 2019-09-11 10:27:41 -0400
+Processing by PlayersController#index as HTML
+  [1m[36mPlayer Load (0.4ms)[0m  [1m[34mSELECT "players".* FROM "players"[0m
+  ↳ app/controllers/players_controller.rb:8:in `index'
+Completed 200 OK in 23ms (Views: 22.3ms | ActiveRecord: 0.4ms | Allocations: 24563)
+
+
+Started GET "/players" for ::1 at 2019-09-11 10:28:23 -0400
+Processing by PlayersController#index as HTML
+  [1m[36mPlayer Load (0.4ms)[0m  [1m[34mSELECT "players".* FROM "players"[0m
+  ↳ app/controllers/players_controller.rb:8:in `index'
+Completed 200 OK in 18ms (Views: 17.3ms | ActiveRecord: 0.4ms | Allocations: 24560)
+
+
+Started GET "/players" for ::1 at 2019-09-11 10:31:31 -0400
+Processing by PlayersController#index as HTML
+  [1m[36mPlayer Load (0.5ms)[0m  [1m[34mSELECT "players".* FROM "players"[0m
+  ↳ app/controllers/players_controller.rb:8:in `index'
+Completed 200 OK in 25ms (Views: 24.3ms | ActiveRecord: 0.5ms | Allocations: 24560)
+
+
+Started GET "/players" for ::1 at 2019-09-11 10:42:39 -0400
+Processing by PlayersController#index as HTML
+  [1m[36mPlayer Load (0.9ms)[0m  [1m[34mSELECT "players".* FROM "players"[0m
+  ↳ app/controllers/players_controller.rb:8:in `index'
+Completed 200 OK in 19ms (Views: 17.7ms | ActiveRecord: 0.9ms | Allocations: 24616)
+
+
+Started GET "/players" for ::1 at 2019-09-11 10:43:39 -0400
+Processing by PlayersController#index as HTML
+  [1m[36mPlayer Load (0.5ms)[0m  [1m[34mSELECT "players".* FROM "players"[0m
+  ↳ app/controllers/players_controller.rb:8:in `index'
+Completed 200 OK in 23ms (Views: 22.0ms | ActiveRecord: 0.5ms | Allocations: 24563)
+
+
+Started GET "/players" for ::1 at 2019-09-11 10:45:09 -0400
+Processing by PlayersController#index as HTML
+  [1m[36mPlayer Load (0.6ms)[0m  [1m[34mSELECT "players".* FROM "players"[0m
+  ↳ app/controllers/players_controller.rb:8:in `index'
+Completed 200 OK in 27ms (Views: 26.0ms | ActiveRecord: 0.6ms | Allocations: 24560)
+
+
+Started GET "/players" for ::1 at 2019-09-11 10:47:13 -0400
+Processing by PlayersController#index as HTML
+  [1m[36mPlayer Load (0.4ms)[0m  [1m[34mSELECT "players".* FROM "players"[0m
+  ↳ app/controllers/players_controller.rb:8:in `index'
+Completed 200 OK in 21ms (Views: 20.4ms | ActiveRecord: 0.4ms | Allocations: 24560)
+
+
+Started GET "/players" for ::1 at 2019-09-11 10:50:09 -0400
+Processing by PlayersController#index as HTML
+  [1m[36mPlayer Load (0.4ms)[0m  [1m[34mSELECT "players".* FROM "players"[0m
+  ↳ app/controllers/players_controller.rb:8:in `index'
+Completed 200 OK in 28ms (Views: 27.6ms | ActiveRecord: 0.4ms | Allocations: 24563)
+
+
+Started GET "/players" for ::1 at 2019-09-11 10:50:14 -0400
+Processing by PlayersController#index as HTML
+  [1m[36mPlayer Load (0.5ms)[0m  [1m[34mSELECT "players".* FROM "players"[0m
+  ↳ app/controllers/players_controller.rb:8:in `index'
+Completed 200 OK in 52ms (Views: 51.5ms | ActiveRecord: 0.5ms | Allocations: 24560)
+
+
+Started GET "/players" for ::1 at 2019-09-11 10:50:55 -0400
+Processing by PlayersController#index as HTML
+  [1m[36mPlayer Load (0.6ms)[0m  [1m[34mSELECT "players".* FROM "players"[0m
+  ↳ app/controllers/players_controller.rb:8:in `index'
+Completed 200 OK in 51ms (Views: 49.7ms | ActiveRecord: 0.6ms | Allocations: 24584)
+
+
+Started GET "/players" for ::1 at 2019-09-11 10:53:56 -0400
+Processing by PlayersController#index as HTML
+  [1m[36mPlayer Load (0.6ms)[0m  [1m[34mSELECT "players".* FROM "players"[0m
+  ↳ app/controllers/players_controller.rb:8:in `index'
+Completed 200 OK in 25ms (Views: 24.2ms | ActiveRecord: 0.6ms | Allocations: 24561)
+
+
+Started GET "/players" for ::1 at 2019-09-11 10:53:59 -0400
+Processing by PlayersController#index as HTML
+  [1m[36mPlayer Load (0.4ms)[0m  [1m[34mSELECT "players".* FROM "players"[0m
+  ↳ app/controllers/players_controller.rb:8:in `index'
+Completed 200 OK in 17ms (Views: 16.5ms | ActiveRecord: 0.4ms | Allocations: 24560)
+
+
+Started GET "/players" for ::1 at 2019-09-11 11:11:53 -0400
+Processing by PlayersController#index as HTML
+  [1m[36mPlayer Load (0.7ms)[0m  [1m[34mSELECT "players".* FROM "players"[0m
+  ↳ app/controllers/players_controller.rb:8:in `index'
+Completed 200 OK in 21ms (Views: 20.5ms | ActiveRecord: 0.7ms | Allocations: 24616)
+
+
