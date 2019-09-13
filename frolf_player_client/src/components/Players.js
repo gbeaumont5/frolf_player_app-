@@ -1,6 +1,9 @@
 import React, {Component} from 'react';
 import axios from 'axios'
-import './App.css';
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+
+
+
 
 class TopPlayers extends Component {
     constructor(props) {
@@ -8,20 +11,28 @@ class TopPlayers extends Component {
         this.state = {
             players: [],
             search: '',
-            searchData: []
+            searchData: [],
+            playerId: ''
         }
         this.handleInputChange = this.handleInputChange.bind(this)
         this.renderData = this.renderData.bind(this)
+       
     }
 
     componentDidMount() {
         this.getPlayers()
+        
     }
 
     async getPlayers () {
         const response = await axios.get(`http://localhost:3000/players`)
         const data = response.data
         console.log(data)
+        data.forEach(function(image){
+            if (image.image === ""){
+                image.image = "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png"
+            }
+        })
         this.setState({
             players: data
         })
@@ -31,36 +42,13 @@ class TopPlayers extends Component {
     getSearchData(event) {
         event.preventDefault()
         const playerData = this.state.players.filter((eachPlayer) => eachPlayer.name.match(this.state.search))
-            
-                // let results = eachPlayer
-                // console.log(results)
-                // this.setState({
-                //     searchData: results
-                // })
-                // console.log('search results data', this.state.searchData)
-            
-        
+        this.setState({
+            searchData: playerData
+        }, () => console.log(this.state.searchData))
         console.log(playerData)
     }
 
-    // getSearchData(event) {
-    //     event.preventDefault()
-    //     const playerData = this.state.players.filter((eachPlayer) => {
-    //         if (eachPlayer.name.match(this.state.search)) {
-    //             let results = eachPlayer
-    //             console.log(results)
-    //             this.setState({
-    //                 searchData: results
-    //             })
-    //             console.log('search results data', this.state.searchData)
-    //         }
-    //     })
-    //     console.log(playerData)
-    // }
-
-
-
-
+    
     async handleInputChange(event) {
         event.preventDefault()
         console.log('click')
@@ -82,8 +70,10 @@ class TopPlayers extends Component {
 
     render() {
         return (
+            <div className='App'>
+
             <>
-            <h1>Search Players!</h1>
+            <h1>Search PDGA Players!</h1>
             <form onSubmit={(event) => this.getSearchData(event)}>
                 <input 
                 type='text'
@@ -94,12 +84,28 @@ class TopPlayers extends Component {
                 
                 <input type='submit' value="Search"></input>
             </form>
-            <div><h1>{this.state.searchData.name}</h1>
-            <img src={this.state.searchData.image}/>
+            
+            <div> {this.state.searchData.map(player => {
+                return(
+                    <Link
+                    onClick={(id) => {
+                        this.props.handleClick(player.id);
+                        this.props.history.push(`/player/${player.id}`)
+                    }}
+                    >
+                    <ul><li>{player.name}</li>
+                    <li><img src={player.image}/></li>
+                    </ul>
+                    </Link>
+                )
+            })
+            }
             </div>
-            </>
+        </>
+        </div>
         )
     }
+
 }
 
 export default TopPlayers
