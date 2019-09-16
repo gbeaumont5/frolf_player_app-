@@ -30,12 +30,15 @@ class Player extends Component {
     
     render() {
         return(
-            <div className="App">
+            <div>
                  <Router className='nav'>
+                     <header>
                      <nav>
                     <Link to='/'>Home</Link>
                     <Link to='/posts/'>Interesting Reddit Posts</Link>
                     </nav>
+                    </header>
+                    
                     <Route path="/" exact render={props => (
                         <Players {...props} handleClick = {this.handleClick}/>
                     )}
