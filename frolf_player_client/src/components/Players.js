@@ -87,10 +87,10 @@ class TopPlayers extends Component {
             
             <div> {this.state.searchData.map(player => {
                 return(
-                    <Link
+                    <Link to={`player/${player.id}`}
                     onClick={(id) => {
                         this.props.handleClick(player.id);
-                        this.props.history.push(`/player/${player.id}`)
+                        
                     }}
                     >
                     <ul><li>{player.name}</li>
